@@ -33,6 +33,11 @@ var ServerPingHandler = function(world) {
             }
         };
 
+        if(world.favicon !== undefined) {
+            console.log("icon");
+            serverStatus.favicon = world.favicon;
+        }
+
         var statusResponse = world.packetWriter.buildStatus({
             ptype: statusPackets.Response, 
             response: JSON.stringify(serverStatus)

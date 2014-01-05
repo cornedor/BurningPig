@@ -4,5 +4,6 @@
     "maxPlayers": 8,
     "gameMode": 0,
     "dimension": 0,
-    "difficulty": 1
+    "difficulty": 1,
+    "favicon": "icon.png"
 }

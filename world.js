@@ -6,7 +6,8 @@
     PacketWriter = require('./network/packetWriter'),
     PacketSender = require('./network/packetSender'),
     Encryption = require('./network/encryption'),
-    EntityManager = require('./EntityManager');
+    EntityManager = require('./EntityManager'),
+    fs = require('fs');
 
 function World() {
     EventEmitter.call(this);
@@ -20,6 +21,15 @@ function World() {
     this.encryption.init(new Buffer(this.serverId, 'ascii'));
 
     this.settings = require('./settings.json');
+
+    // check if there is a icon defined and load it
+    if(this.settings.favicon) {
+        var self = this;
+        fs.readFile(this.settings.favicon, function(err, data) {
+            var base64Image = new Buffer(data, 'binary').toString('base64');
+            self.favicon = "data:image/png;base64," + base64Image;
+        });
+    }
 
     this.packetWriter = new PacketWriter();
     this.packetSender = new PacketSender(this);
