@@ -34,7 +34,6 @@ var ServerPingHandler = function(world) {
         };
 
         if(world.favicon !== undefined) {
-            console.log("icon");
             serverStatus.favicon = world.favicon;
         }
 

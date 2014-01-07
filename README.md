@@ -54,6 +54,7 @@ maxPlayers - The maximium number of players the server supports.
 gameMode - The game mode  
 dimension - The dimension of the world  
 difficulty - World difficulty  
+favicon - Favicon for the server list, needs to be a PNG
 
 Example:
 
@@ -63,7 +64,8 @@ Example:
         "maxPlayers": 8,
         "gameMode": 0,
         "dimension": 0,
-        "difficulty": 1
+        "difficulty": 1,
+        "favicon": "icon.png"
     }
 
 ##Installing BurningPig
